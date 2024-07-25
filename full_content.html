@@ -1,0 +1,2412 @@
+<html><head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Owner's Manual</title>
+    <link rel="stylesheet" type="text/css" href="../../css/media.specific.dark.css">
+    <link rel="stylesheet" type="text/css" href="../../css/content.css">
+    <link rel="stylesheet" type="text/css" href="../../css/owner.info.css">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.tree.css">
+    <!--  Changes for Search functionality Starts  -->
+    <script type="text/javascript">
+      let match = false;
+      let newSrcEnum = {
+        SIDE_NAV_CLICK: "SIDE_NAV_CLICK",
+        OTHER: "OTHER",
+      };
+
+      function checkMedia(x) {
+        ("MEDIA");
+        x;
+        if (x.matches) {
+          // If media query matches
+          match = true;
+        } else {
+          match = false;
+        }
+      }
+
+      function newSrc(targetfile, enumValue) {
+        if (enumValue === newSrcEnum.SIDE_NAV_CLICK) {
+          $("div").removeClass("active");
+          const currentTopicButtonClicked =
+            event.target.parentElement.parentElement;
+          currentTopicButtonClicked.classList.add("active");
+        }
+        var newSrc = targetfile ? targetfile : "splash.html";
+        document.getElementById("ohb_topic").data = newSrc;
+        var menu = document.getElementById("menu-trigger");
+        if (match) {
+          // If media query matches
+          var y = document.getElementById("navigation_bar");
+          y.style.display = "none";
+          if (targetfile) {
+            menu.classList.toggle("change");
+          }
+        }
+      }
+
+      var x = window.matchMedia(
+        "(max-width: 900px) and (orientation: portrait)"
+      );
+      checkMedia(x);
+      x.addListener(checkMedia); // Attach listener function on state changes
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../js/nav.tree.js"></script>
+    <script type="text/javascript">
+      let sideNavData = [
+        {
+          navItem: "Owner's Manual",
+          url: "",
+          childItems: [],
+        },
+        {
+          navItem: "Introduction",
+          url: "",
+          childItems: [
+            {
+              navItem: "About This Guide",
+              url: "",
+              childItems: [
+                {
+                  navItem: "A Message from Fisker",
+                  url: "EX.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Using This Guide, Locating and Referencing                                    Information",
+                  url: "EYB.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Guide Applicability",
+                  url: "EHC.html",
+                  childItems: [],
+                },
+                { navItem: "Illustrations", url: "EWC.html", childItems: [] },
+                {
+                  navItem: "Errors or Inaccuracies",
+                  url: "E6C.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Symbols Glossary for Important                                    Information",
+                  url: "EHD.html",
+                  childItems: [],
+                },
+                { navItem: "Trademarks", url: "ERE.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Information About This Vehicle",
+              url: "",
+              childItems: [
+                { navItem: "Driving Advice", url: "EEF.html", childItems: [] },
+                { navItem: "Quality Control", url: "EZG.html", childItems: [] },
+                {
+                  navItem: "Vehicle Modifications",
+                  url: "EMH.html",
+                  childItems: [],
+                },
+                { navItem: "Body Repairs", url: "E5AAC.html", childItems: [] },
+                {
+                  navItem: "Electric Vehicle Precautions",
+                  url: "ELBAC.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Vehicle Overview",
+          url: "",
+          childItems: [
+            {
+              navItem: "Exterior",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Exterior Overview",
+                  url: "EPEAC.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Interior",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Interior Overview",
+                  url: "E1HAC.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Overhead Console Overview",
+                  url: "E2NAC.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Profiles",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Fisker Account",
+                  url: "E5AAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Vehicle Profiles",
+                  url: "EMBAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Creating a Profile",
+                  url: "EHDAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Deleting a Profile",
+                  url: "EHGAE.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Opening & Closing",
+          url: "",
+          childItems: [
+            {
+              navItem: "Keyless Entry System",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Using the Key Fob",
+                  url: "ENJAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Replacing the Key Fob Battery",
+                  url: "EYPAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Caring for the Key Fob",
+                  url: "E1TAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Replacement Key Fobs",
+                  url: "EKVAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "About Connected App Features",
+                  url: "E4VAE.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Doors",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Opening Doors from the Outside",
+                  url: "EHXAE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Opening Doors from the Inside",
+                  url: "EQ1AE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Door Ajar Warning",
+                  url: "ES2AE.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Locking and Unlocking from Inside the                                    Vehicle",
+                  url: "EA3AE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Child Safety Locks",
+                  url: "ED4AE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Automatic Locking and Unlocking",
+                  url: "E45AE.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Opening Interior Doors with No Power",
+                  url: "ET6AE.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Windows",
+              url: "",
+              childItems: [
+                { navItem: "Window Safety", url: "EZAAG.html", childItems: [] },
+                {
+                  navItem: "Opening and Closing Windows",
+                  url: "E2CAG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "OpenSky (Sliding Roof)",
+                  url: "EKGAG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Doggie (Rear Quarter) Windows",
+                  url: "EMJAG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "California Mode (If Equipped)",
+                  url: "EOKAG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Power Liftgate Window (If Equipped)",
+                  url: "EUMAG.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Liftgate",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Liftgate Opening and Closing",
+                  url: "EIOAG.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Accessing the Lower Cargo Area with Flat                                    & Fold Cargo Floor (If Equipped)",
+                  url: "EZUAG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Retractable Cargo Cover (If Equipped)",
+                  url: "ERWAG.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Security",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Anti-theft System",
+                  url: "ELYAG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Intrusion Alert",
+                  url: "EWZAG.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Tracking and Monitoring",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Find My Fisker (Remote Vehicle Locator)",
+                  url: "EX1AG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Remote Flash Lights",
+                  url: "E12AG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Vehicle Monitoring",
+                  url: "EO3AG.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Seating & Safety Restraints",
+          url: "",
+          childItems: [
+            {
+              navItem: "Seats",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Correct Seating Position",
+                  url: "EL5AG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Correct Passenger Seating Position",
+                  url: "EMABG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Adjusting the Front Seats",
+                  url: "EJCBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Driver Seat Memory (If Equipped)",
+                  url: "E3EBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Power Rear Seat Reclining (If Equipped)",
+                  url: "EMFBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Rear Seats Folding",
+                  url: "EEHBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Seat Heating (If Equipped)",
+                  url: "E3JBG.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Head Restraints",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Head Restraints Overview",
+                  url: "EFMBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Correct Head Restraint Position",
+                  url: "EHNBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Adjusting a Rear Head Restraint",
+                  url: "EYOBG.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Seat Belts",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Seat Belt Warnings",
+                  url: "EYRBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Wearing Seat Belts",
+                  url: "EJYBG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Fastening the Seat Belt",
+                  url: "EB1BG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Seat Belt Reminders",
+                  url: "EZ3BG.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using Seat Belts When Pregnant",
+                  url: "EDBAI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Seat Belt Pre-tensioners",
+                  url: "ESCAI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Testing Seat Belts",
+                  url: "ENEAI.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Child Safety Seats",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Guidelines for Seating Children",
+                  url: "ERGAI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Choosing a Child Safety Seat",
+                  url: "EKJAI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Seating Larger Children",
+                  url: "E12AI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Installing Child Safety Seats",
+                  url: "EQ4AI.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Installing Seat Belt Retained Child                                    Seats",
+                  url: "EU6AI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Installing LATCH or ISOFIX Child Seats",
+                  url: "EWBBI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Attaching Upper Tether Straps",
+                  url: "ERFBI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Child Safety Seat Warnings",
+                  url: "EGHBI.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Airbags",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Location of Airbags and Sensors",
+                  url: "ELKBI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Airbag Safety Information",
+                  url: "EFNBI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Airbag Safety Labels",
+                  url: "EDSBI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "How the Airbags Work",
+                  url: "EWSBI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Types of Airbags",
+                  url: "E3UBI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Obstruction of Airbags",
+                  url: "EF1BI.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Front Passenger Seat Occupant                                    Classification System (OCS)",
+                  url: "EI4BI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Effects of Airbag Inflation",
+                  url: "E6MCI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Airbag SRS Warning Indicator",
+                  url: "ECPCI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Airbag Service Information",
+                  url: "E2RCI.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Driving & Operating",
+          url: "",
+          childItems: [
+            {
+              navItem: "Steering Wheel",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Adjusting the Steering Wheel Position",
+                  url: "EZTCI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Steering Wheel Heat (If Equipped)",
+                  url: "EWVCI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Steering Response and Sensitivity",
+                  url: "E1WCI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Steering Wheel - Left Controls",
+                  url: "EGXCI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Steering Wheel - Right Controls",
+                  url: "EEZCI.html",
+                  childItems: [],
+                },
+                { navItem: "Horn", url: "EO2CI.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Mirrors",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Exterior Mirrors",
+                  url: "EE3CI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Digital Rear View Mirror",
+                  url: "E2ADI.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Driver Display",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Driver Display Overview",
+                  url: "EQHDI.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Warning Indicators (Telltales)",
+                  url: "EYMDI.html",
+                  childItems: [],
+                },
+                { navItem: "Power Usage", url: "E5KAK.html", childItems: [] },
+                {
+                  navItem: "Battery State of Charge (SoC) Indicators",
+                  url: "EDMAK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Driver Information",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Vehicle Information and Alerts",
+                  url: "EJOAK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Trip Information",
+                  url: "EBQAK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Central Touchscreen",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Central Touchscreen Overview",
+                  url: "EQSAK.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Control and Hollywood Modes (If                                    Equipped)",
+                  url: "EQBBK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Display Brightness Settings",
+                  url: "EVDBK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Starting and Powering Off",
+              url: "",
+              childItems: [
+                { navItem: "Starting", url: "E6EBK.html", childItems: [] },
+                { navItem: "Powering Off", url: "E3HBK.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Gears",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Selecting a Gear",
+                  url: "EQIBK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Driving Modes",
+              url: "",
+              childItems: [
+                { navItem: "Drive Modes", url: "EDNBK.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Drive System Failure",
+              url: "",
+              childItems: [
+                {
+                  navItem: "High-Voltage Drive System Failure",
+                  url: "ERSBK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Drive Control",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Steering Wheel Controls",
+                  url: "ETWBK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Drive Control Requirements",
+                  url: "EAYBK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using Drive Control",
+                  url: "ESZBK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Exterior Lights",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Exterior Lights Controls",
+                  url: "EC5BK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Daytime Running Lights",
+                  url: "EGBCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "High Beam Headlights",
+                  url: "EACCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Automatic Headlight Adjustment",
+                  url: "EUECK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Rear Fog Light",
+                  url: "EOFCK.html",
+                  childItems: [],
+                },
+                { navItem: "Turn Signals", url: "EXGCK.html", childItems: [] },
+                {
+                  navItem: "Hazard Warning Lights",
+                  url: "EZHCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Fisker Activate",
+                  url: "EXICK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Interior Lights",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Interior Lighting Settings",
+                  url: "EKJCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Overhead Lights",
+                  url: "EPLCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Reading Lights",
+                  url: "EGMCK.html",
+                  childItems: [],
+                },
+                { navItem: "Cabin Lights", url: "E6MCK.html", childItems: [] },
+                { navItem: "Trunk Lights", url: "EUOCK.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Wipers and Washers",
+              url: "",
+              childItems: [
+                { navItem: "Wipers", url: "EMPCK.html", childItems: [] },
+                { navItem: "Washers", url: "EYRCK.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Brakes",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Braking Systems",
+                  url: "EHTCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Electronic Parking Brake (EPB)",
+                  url: "EFVCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Anti-Lock Braking System (ABS)",
+                  url: "EGZCK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Regenerative Braking",
+                  url: "EU4CK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Brake Pad Wear",
+                  url: "EWBDK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Ride Control Systems",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Electronic Stability Control (ESC)",
+                  url: "EBDDK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Getting Maximum Range",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Driving Tips to Maximize Range",
+                  url: "E4FDK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Cameras",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Interior Camera",
+                  url: "E3HDK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Exterior Cameras",
+                  url: "EVIDK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Camera System Failure",
+                  url: "EWMDK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Heating, Ventilation & Air Conditioning",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Climate Controls",
+                  url: "EDNDK.html",
+                  childItems: [],
+                },
+                { navItem: "Defrost", url: "EFWDK.html", childItems: [] },
+                {
+                  navItem: "Limo Mode (if Equipped)",
+                  url: "EXYDK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Interior Equipment",
+              url: "",
+              childItems: [
+                { navItem: "Sun Visors", url: "EC1DK.html", childItems: [] },
+                {
+                  navItem: "Cabin Storage Precautions",
+                  url: "EK2DK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Center Console",
+                  url: "EU3DK.html",
+                  childItems: [],
+                },
+                { navItem: "Taco Trays", url: "EV4DK.html", childItems: [] },
+                {
+                  navItem: "Storage Boxes (If Equipped)",
+                  url: "E1BEK.html",
+                  childItems: [],
+                },
+                { navItem: "Rear Armrest", url: "E2DEK.html", childItems: [] },
+                { navItem: "Door Pockets", url: "EHFEK.html", childItems: [] },
+                {
+                  navItem: "Front Seatback Hooks",
+                  url: "EXFEK.html",
+                  childItems: [],
+                },
+                { navItem: "Cup Holders", url: "EIGEK.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Accessory Connections",
+              url: "",
+              childItems: [
+                {
+                  navItem: "USB Connections",
+                  url: "ELHEK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Wireless Charging",
+                  url: "EWIEK.html",
+                  childItems: [],
+                },
+                { navItem: "12V Socket", url: "E4JEK.html", childItems: [] },
+                {
+                  navItem: "AC Power Outlet",
+                  url: "EVLEK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "External Power Outlet",
+                  url: "ELNEK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Pedestrian Warning System",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Acoustic Vehicle Alerting System (AVAS)",
+                  url: "EQPEK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Trailer Towing",
+              url: "",
+              childItems: [
+                {
+                  navItem: "General Trailering Information",
+                  url: "EMREK.html",
+                  childItems: [],
+                },
+                { navItem: "Trailer Mode", url: "EOSEK.html", childItems: [] },
+                {
+                  navItem:
+                    "Driving Characteristics and Trailering                                    Tips",
+                  url: "ENTEK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Trailer Weight Ratings",
+                  url: "EAAFK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Towing Equipment",
+                  url: "E6BFK.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Advanced Driver Assistance Systems (ADAS)",
+          url: "",
+          childItems: [
+            {
+              navItem: "About ADAS",
+              url: "",
+              childItems: [
+                { navItem: "ADAS Features", url: "EFLFK.html", childItems: [] },
+                {
+                  navItem: "Driver Responsibility",
+                  url: "ECOFK.html",
+                  childItems: [],
+                },
+                { navItem: "ADAS View", url: "E6OFK.html", childItems: [] },
+                {
+                  navItem: "ADAS Component Locations",
+                  url: "ERPFK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "ADAS Limitations",
+                  url: "EHSFK.html",
+                  childItems: [],
+                },
+                { navItem: "ADAS Fault", url: "EFWFK.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Driving Assistants",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Traffic Sign Recognition",
+                  url: "EYWFK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Traffic Light Recognition",
+                  url: "E6YFK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Speed Limit Assistance",
+                  url: "EC1FK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Safety Features",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Automatic Emergency Braking",
+                  url: "EW2FK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Blind Spot Detection",
+                  url: "ETCGK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Door Open Warning",
+                  url: "ETFGK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Driver Monitoring System",
+                  url: "EIGGK.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Lane Departure Warning and Lane Keep                                    Assist",
+                  url: "E3HGK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Parking Features",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Parking Assist",
+                  url: "E4NGK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "2D/3D Surround View System",
+                  url: "ECQGK.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Infotainment",
+          url: "",
+          childItems: [
+            {
+              navItem: "About Infotainment",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Infotainment Illustrations",
+                  url: "EBVGK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Before You Begin",
+                  url: "ERVGK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Physical Audio Controls",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Steering Wheel Media Controls",
+                  url: "ECWGK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Media and Audio",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Media and Audio Overview",
+                  url: "E6XGK.html",
+                  childItems: [],
+                },
+                { navItem: "Radio", url: "EP2GK.html", childItems: [] },
+                {
+                  navItem: "Audio Streaming Services Integration",
+                  url: "EO4GK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Playing Media from Devices",
+                  url: "ET5GK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Audio Settings",
+                  url: "E66GK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Maps and Navigation",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Navigation Overview",
+                  url: "EKCHK.html",
+                  childItems: [],
+                },
+                { navItem: "Navigating", url: "E2DHK.html", childItems: [] },
+                {
+                  navItem: "Adjusting the Map",
+                  url: "ECIHK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Setting Home and Favorite Destinations",
+                  url: "EWKHK.html",
+                  childItems: [],
+                },
+                { navItem: "Offline Mode", url: "EZMHK.html", childItems: [] },
+                { navItem: "Map Updates", url: "EQNHK.html", childItems: [] },
+                {
+                  navItem: "Navigation Settings",
+                  url: "E1OHK.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Phone and Smart Devices",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Bluetooth® Compatibility",
+                  url: "EQRHK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Pairing a Bluetooth® Device",
+                  url: "EKSHK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Device Syncing and Preferences",
+                  url: "E6YHK.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Connecting and Disconnecting Bluetooth®                                    Devices",
+                  url: "E43HK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Unpairing a Bluetooth® Device",
+                  url: "EB6HK.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using the Phone App",
+                  url: "EIBAM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Making a Phone Call",
+                  url: "E3DAM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Receiving a Phone Call",
+                  url: "EAGAM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "In-Call Options",
+                  url: "EAIAM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using Messages",
+                  url: "ELKAM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Apps",
+              url: "",
+              childItems: [
+                { navItem: "Apps", url: "EWMAM.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Connectivity",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Cellular Connection",
+                  url: "EQOAM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Add a Wi-Fi Network",
+                  url: "E1OAM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using Your Vehicle as a Hotspot",
+                  url: "EZRAM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Fisker Ocean with Alexa Built-in",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Alexa Built-in",
+                  url: "ERWAM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Alexa Settings",
+                  url: "EIXAM.html",
+                  childItems: [],
+                },
+                { navItem: "Using Alexa", url: "EYYAM.html", childItems: [] },
+                {
+                  navItem:
+                    "Using Smart Home Devices with Your                                    Vehicle",
+                  url: "EM1AM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Information",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Viewing Vehicle Information",
+                  url: "E41AM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Direct Access: Owner's Information",
+                  url: "E52AM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Software Updates",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Over-the-Air Updates",
+                  url: "ER4AM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Viewing Release Notes",
+                  url: "EYHBM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Rebooting & Resetting Systems",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Rebooting Infotainment",
+                  url: "EGJBM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Resetting the Vehicle",
+                  url: "ECMBM.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "High-Voltage Battery Pack & Charging",
+          url: "",
+          childItems: [
+            {
+              navItem: "Electric Vehicle Components",
+              url: "",
+              childItems: [
+                {
+                  navItem: "High-Voltage Components",
+                  url: "EJQBM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Battery Information",
+              url: "",
+              childItems: [
+                {
+                  navItem: "About the Vehicle Batteries",
+                  url: "EEUBM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Battery Pack Care",
+                  url: "ENVBM.html",
+                  childItems: [],
+                },
+                { navItem: "SolarSky", url: "EJYBM.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Charging Instructions",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Safety Checklist",
+                  url: "EB1BM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Portable Charging Cable",
+                  url: "ES3BM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Charge Port Door",
+                  url: "ED6BM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Charging the Vehicle",
+                  url: "EVACM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Disconnecting the Charging Cable",
+                  url: "EBDCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Charging Status",
+                  url: "EPFCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Setting Battery Saver",
+                  url: "EQLCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Cold Weather Charging Considerations",
+                  url: "EJQCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "DC Charging Precaution",
+                  url: "EMRCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using Public Charging Stations",
+                  url: "EBSCM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle as a Power Supply",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Coming Soon: PowerBank",
+                  url: "EZSCM.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Maintenance",
+          url: "",
+          childItems: [
+            {
+              navItem: "Maintenance Requirements",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Your Responsibility",
+                  url: "ESTCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Scheduled Maintenance",
+                  url: "E5TCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Fluid Replacement",
+                  url: "EOUCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Owner Maintenance",
+                  url: "EZUCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Electrical and High Voltage Safety",
+                  url: "ETYCM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Multi-point Inspection",
+                  url: "ED2CM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Power Unit Compartment Access",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Opening and Closing the Hood",
+                  url: "ES3CM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Power Unit Compartment Overview",
+                  url: "ECCDM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Fluid Reservoirs",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Checking Brake Fluid",
+                  url: "EMEDM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Checking Washer Fluid",
+                  url: "ECLDM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Checking Coolant",
+                  url: "EDODM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Wiper Blades and Washer Jets",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Checking the Wiper Blades",
+                  url: "EWODM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Replacing Wiper Blades",
+                  url: "ETPDM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Cleaning Washer Jets",
+                  url: "EVVDM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Cabin Air Filter",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Replacing the Cabin Air Filter",
+                  url: "ERXDM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Care",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Cleaning the Exterior",
+                  url: "EQYDM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Polishing, Paint and Body Repairs",
+                  url: "ENGEM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using a Car Cover",
+                  url: "EJJEM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Cleaning the Interior",
+                  url: "EVKEM.html",
+                  childItems: [],
+                },
+                { navItem: "Floor Mats", url: "ETUEM.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Electrical",
+              url: "",
+              childItems: [
+                { navItem: "12V Battery", url: "EYWEM.html", childItems: [] },
+                {
+                  navItem: "Light Source Replacement",
+                  url: "EU2EM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Fuse Box Locations",
+                  url: "EM3EM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Replacing a Fuse",
+                  url: "EG6EM.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Low-Voltage Battery Fuse Box                                    Specifications",
+                  url: "E1AFM.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Power Unit Compartment Fuse Box                                    Specifications",
+                  url: "EUHFM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Cabin Fuse Box",
+                  url: "ETMGM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Trunk Fuse Box Specifications",
+                  url: "EB5HM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Vehicle Diagnostic Connector",
+                  url: "EXTIM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Parts and Accessories",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Parts, Accessories, and Modifications",
+                  url: "EYUIM.html",
+                  childItems: [],
+                },
+                { navItem: "Body Repairs", url: "EXWIM.html", childItems: [] },
+                {
+                  navItem: "Placing RFID Transponders",
+                  url: "EBYIM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Lifting Points",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Lifting the Vehicle",
+                  url: "EFZIM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Storing the Vehicle",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Storage Guidelines",
+                  url: "ER3IM.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Tires & Wheels",
+          url: "",
+          childItems: [
+            {
+              navItem: "Tire Information",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Understanding Tire Markings",
+                  url: "EVAJM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "International Tire Approval Marks",
+                  url: "EWPJM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Uniform Tire Quality Grading",
+                  url: "EGVJM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Tire and Loading Information Label",
+                  url: "EC2JM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Tire Care and Maintenance",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Inspecting and Maintaining Tires",
+                  url: "E24JM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Maintaining Tire Pressures",
+                  url: "EVFKM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Replacing Tires and Wheels",
+                  url: "EUMKM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Seasonal Tire Types",
+                  url: "ESQKM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Driving in Low Temperatures",
+                  url: "EMTKM.html",
+                  childItems: [],
+                },
+                { navItem: "Snow chains", url: "E3TKM.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Tire Pressure Monitoring System",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Tire Pressure Monitoring System (TPMS)",
+                  url: "EZWKM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Tire Repair",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Safety Precautions",
+                  url: "EE4KM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Tire Repair Kit Overview",
+                  url: "EFALM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Tire Repair Kit Components",
+                  url: "EYDLM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using the Tire Repair Kit",
+                  url: "EEGLM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Using the Compressor",
+                  url: "ELQLM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Loading",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Loading the Vehicle",
+                  url: "EZULM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Steps for Determining Correct Load Limit",
+                  url: "EQXLM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Roof Racks (If Equipped)",
+                  url: "ECBMM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Glossary of Terms",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Tires and Wheels Glossaries",
+                  url: "EECMM.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Technical Data",
+          url: "",
+          childItems: [
+            {
+              navItem: "Vehicle Identification",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Vehicle Identification Number",
+                  url: "EYIMM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Vehicle Certification Label",
+                  url: "EJLMM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Dimensions and Weights",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Exterior Dimensions",
+                  url: "ESOMM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Vehicle Weights",
+                  url: "EIZMM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Wheels and Tires",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Wheel and Tire Specifications",
+                  url: "E1BNM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Tire Pressures",
+                  url: "ELVNM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Sub-Systems",
+              url: "",
+              childItems: [
+                { navItem: "Steering", url: "E2XNM.html", childItems: [] },
+                { navItem: "Brakes", url: "E51NM.html", childItems: [] },
+                {
+                  navItem: "Front Suspension",
+                  url: "E6AOM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Rear Suspension",
+                  url: "EBFOM.html",
+                  childItems: [],
+                },
+                { navItem: "Motors", url: "ECJOM.html", childItems: [] },
+                { navItem: "Battery: 12V", url: "EATOM.html", childItems: [] },
+                {
+                  navItem: "Battery: High-Voltage",
+                  url: "EDYOM.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Roadside Assistance & Emergency Information",
+          url: "",
+          childItems: [
+            {
+              navItem: "eCall",
+              url: "",
+              childItems: [
+                {
+                  navItem: "eCall (Europe)",
+                  url: "ESCPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "eCall (North America)",
+                  url: "E5FPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Vehicle Location",
+                  url: "E4GPM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Roadside Assistance",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Fisker Roadside Assistance",
+                  url: "EXHPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Contacting Roadside Assistance",
+                  url: "EIIPM.html",
+                  childItems: [],
+                },
+                { navItem: "Disclaimers", url: "E5JPM.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Instructions for Transporters",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Transporting the Vehicle",
+                  url: "EOKPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Preparing the Vehicle for Transportation",
+                  url: "EWMPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Pulling the Vehicle onto a Trailer or                                    Transporter",
+                  url: "EIPPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Recovering the Vehicle From a Ditch",
+                  url: "EFUPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Securing the Vehicle for Transportation",
+                  url: "EAVPM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Disabling the Power System",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Safety Precautions",
+                  url: "EEXPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Emergency Responder Cut Loop",
+                  url: "E5ZPM.html",
+                  childItems: [],
+                },
+                {
+                  navItem:
+                    "Disabling the Vehicle’s Power for                                    Service",
+                  url: "ES2PM.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Fire",
+              url: "",
+              childItems: [
+                { navItem: "Firefighting", url: "EO4PM.html", childItems: [] },
+              ],
+            },
+          ],
+        },
+        {
+          navItem: "Consumer Information",
+          url: "",
+          childItems: [
+            {
+              navItem: "Limited Warranty Information",
+              url: "",
+              childItems: [
+                { navItem: "Warrantor", url: "EN6PM.html", childItems: [] },
+              ],
+            },
+            {
+              navItem: "Customer Assistance",
+              url: "",
+              childItems: [
+                {
+                  navItem: "Contacting Fisker",
+                  url: "E1AAO.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Reporting Safety Defects",
+              url: "",
+              childItems: [
+                { navItem: "United States", url: "EXCAO.html", childItems: [] },
+                { navItem: "Canada", url: "EKEAO.html", childItems: [] },
+                {
+                  navItem:
+                    "United Kingdom, Europe, and Global                                    Markets",
+                  url: "ETFAO.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Disclaimers",
+              url: "",
+              childItems: [
+                {
+                  navItem: "California Proposition 65",
+                  url: "EEGAO.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "California Perchlorate Advisory",
+                  url: "EYGAO.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Event Data Recorders",
+                  url: "ELHAO.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "Data and Privacy",
+                  url: "EKJAO.html",
+                  childItems: [],
+                },
+                {
+                  navItem: "FCC and ISED Compliance",
+                  url: "EMKAO.html",
+                  childItems: [],
+                },
+              ],
+            },
+            {
+              navItem: "Vehicle Recycling",
+              url: "",
+              childItems: [
+                {
+                  navItem: "High-Voltage Battery Recycling Process",
+                  url: "ECTAO.html",
+                  childItems: [],
+                },
+              ],
+            },
+          ],
+        },
+      ];
+
+      $(document).ready(function () {
+        initializeSearchInput();
+      });
+
+      function initializeSearchInput() {
+        var $searchInput = $("#search-input");
+        var $searchResults = $("#search-results");
+
+        $searchResults.hide();
+
+        $searchInput.keydown(function (e) {
+          if (e.keyCode === 27) {
+            $searchResults.hide();
+            $searchInput.val("");
+          }
+
+          if (e.keyCode === 13) {
+            //enter key pressed - go to first search result if it exists
+            e.preventDefault();
+
+            $("#search-results a").first().get(0).click();
+          }
+        });
+
+        $searchInput.on(
+          "input",
+          debounce(function () {
+            handleSearchInput();
+          }, 500)
+        );
+      }
+
+      // Returns a function, that, as long as it continues to be invoked, will not
+      // be triggered. The function will be called after it stops being called for
+      // N milliseconds. If `immediate` is passed, trigger the function on the
+      // leading edge, instead of the trailing.
+      function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+          var context = this,
+            args = arguments;
+          var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      }
+
+      async function handleSearchInput() {
+        var $searchInput = $("#search-input");
+        var $searchResults = $("#search-results");
+        var query = $searchInput.val();
+
+        //trigger a search if a search term longer than two characters has been entered
+        $searchResults.empty().hide();
+
+        if (query.length < 2) {
+          return;
+        }
+
+        let results = await getSearchResults(query);
+        //display the result only if the search box is not empty by the time api result came incase of slow network.
+        $searchInput = $("#search-input");
+        query = $searchInput.val();
+        if (query.length < 2) {
+          return;
+        }
+
+        renderResults(results);
+      }
+      function renderResults(results) {
+        $("#search-results").empty();
+        var searchResults = document.getElementById("search-results");
+        var $searchResults = $(searchResults);
+
+        if (!results.length) {
+          $searchResults.hide();
+          return;
+        }
+
+        var resultsFragment = document.createDocumentFragment();
+        var div = document.createElement("div");
+        // Only show the first twenty results
+        results.forEach(function (result) {
+          var link = document.createElement("a");
+          var title = document.createElement("span");
+          var bodytext = document.createElement("small");
+
+          link.className = "search-results__item";
+          title.className = "search-results__title";
+          bodytext.className = "search-results__bodytext";
+
+          link.onclick = function () {
+            expandSideNav(result.link);
+            initializeSearchInput();
+            //open (or close) submenu items in the  menu. Close all the other open submenu items.
+            $(".item-has-submenu")
+              .children("h3")
+              .on("click", function (event) {
+                event.preventDefault();
+                $(this)
+                  .toggleClass("submenu-open")
+                  .next(".sub-menu")
+                  .slideToggle(200)
+                  .end()
+                  .parent(".item-has-submenu")
+                  .siblings(".item-has-submenu")
+                  .children("h3")
+                  .removeClass("submenu-open")
+                  .next(".sub-menu")
+                  .slideUp(200);
+              });
+
+            //open (or close) submenu items in the  menu. Close all the other open submenu items.
+            $(".item-has-submenu")
+              .children("h4")
+              .on("click", function (event) {
+                event.preventDefault();
+                $(this)
+                  .toggleClass("submenu-open")
+                  .next(".sub-menu")
+                  .slideToggle(200)
+                  .end()
+                  .parent(".item-has-submenu")
+                  .siblings(".item-has-submenu")
+                  .children("h4")
+                  .removeClass("submenu-open")
+                  .next(".sub-menu")
+                  .slideUp(200);
+              });
+          };
+
+          title.innerHTML = highlightKeyword(result.title, result.matchedTerms);
+          bodytext.innerHTML = highlightKeyword(
+            result.bodytext,
+            result.matchedTerms
+          );
+
+          link.appendChild(title);
+          link.appendChild(bodytext);
+
+          resultsFragment.appendChild(link);
+        });
+        div.appendChild(resultsFragment);
+        searchResults.appendChild(div);
+
+        var header = document.querySelector("div.tds-shell-masthead");
+
+        $searchResults.css("top", header.clientHeight);
+        $searchResults.css("height", window.innerHeight - header.clientHeight);
+        $searchResults.show();
+      }
+
+      async function getSearchResults(query) {
+        let response = await fetch(
+          `https://owners-manual.fiskerdps.com/lunr/owner-manual-search?searchString=${query}&language=en-US`
+        );
+
+        let data = await response.json();
+        return data;
+      }
+
+      function highlightKeyword(sourceText, keyword, tag) {
+        if (!tag) tag = "mark";
+
+        return sourceText.replace(new RegExp(keyword, "ig"), function (match) {
+          return "<" + tag + ">" + match + "</" + tag + ">";
+        });
+      }
+      function ClearFields() {
+        var $searchResults = $("#search-results");
+        $searchResults.empty().hide();
+        document.getElementById("search-input").value = "";
+      }
+
+      function expandSideNav(activeLink) {
+        $("#multi-level-navigation").empty();
+        let sideNav = document.getElementById("multi-level-navigation");
+
+        let ul = document.createElement("ul");
+
+        let form = document.createElement("form");
+        form.className = "search-container";
+        let input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "Search..";
+        input.type = "text";
+        input.name = "search";
+        input.id = "search-input";
+
+        let button = document.createElement("button");
+        button.type = "submit";
+        let img = document.createElement("img");
+        img.src = "../../images/search-alt.svg";
+
+        button.appendChild(img);
+        form.appendChild(input);
+        form.appendChild(button);
+
+        let parentNavFragment = document.createDocumentFragment();
+        sideNavData.forEach(function (navData) {
+          let menuButtonDiv = document.createElement("div");
+          let menuChapterDiv = document.createElement("div");
+          menuChapterDiv.className = "menu-chapter";
+          menuButtonDiv.className = "menu-button";
+
+          if (navData.childItems?.length > 0) {
+            let parent_li = document.createElement("li");
+            parent_li.className = "item-has-submenu";
+            let parent_title = document.createElement("h3");
+
+            let child_ul = document.createElement("ul");
+            child_ul.className = "sub-menu";
+            let childNavFragment = document.createDocumentFragment();
+
+            navData.childItems.forEach(function (childNavData) {
+              let child_ul_submenu_button_div = document.createElement("div");
+              child_ul_submenu_button_div.className = "submenu-button";
+              let child_ul_submenu_chapter_div = document.createElement("div");
+              child_ul_submenu_chapter_div.className = "submenu-chapter";
+              if (childNavData.childItems?.length > 0) {
+                let child_li = document.createElement("li");
+                child_li.className = "item-has-submenu";
+                let child_title = document.createElement("h4");
+
+                let subchild_ul = document.createElement("ul");
+                subchild_ul.className = "sub-menu";
+                let subChildNavFragment = document.createDocumentFragment();
+
+                childNavData.childItems.forEach(function (subChildNavData) {
+                  let subchild_ul_submenu_button_div =
+                    document.createElement("div");
+                  subchild_ul_submenu_button_div.className = "topic-button";
+                  let subchild_ul_submenu_chapter_div =
+                    document.createElement("div");
+                  subchild_ul_submenu_chapter_div.className = `submenu-topic ${
+                    activeLink === subChildNavData.url ? "active" : ""
+                  }`;
+
+                  let subchild_li = document.createElement("li");
+                  subchild_li.id = "link";
+
+                  let subchild_anchortag = document.createElement("a");
+                  subchild_anchortag.className = "topiclink";
+
+                  if (activeLink === subChildNavData?.url) {
+                    parent_title.className = "submenu-open";
+                    parent_title.innerHTML = navData.navItem;
+                    parent_li.appendChild(parent_title);
+                    child_title.className = "submenu-open";
+                    child_title.innerHTML = childNavData.navItem;
+                    child_li.appendChild(child_title);
+
+                    child_ul.style = "display:block";
+                    subchild_ul.style = "display: block;";
+                  } else {
+                    parent_title.innerHTML = navData.navItem;
+                    parent_li.appendChild(parent_title);
+                    child_title.innerHTML = childNavData.navItem;
+                    child_li.appendChild(child_title);
+                  }
+
+                  subchild_anchortag.onclick = function () {
+                    newSrc(subChildNavData?.url, newSrcEnum.SIDE_NAV_CLICK);
+                  };
+
+                  subchild_anchortag.innerHTML = subChildNavData.navItem;
+                  subchild_li.appendChild(subchild_anchortag);
+
+                  subchild_ul_submenu_chapter_div.appendChild(subchild_li);
+                  subchild_ul_submenu_button_div.appendChild(
+                    subchild_ul_submenu_chapter_div
+                  );
+                  subchild_ul.appendChild(subchild_ul_submenu_button_div);
+                });
+                child_li.appendChild(subchild_ul);
+                childNavFragment.appendChild(child_li);
+
+                child_ul_submenu_chapter_div.appendChild(childNavFragment);
+                child_ul_submenu_button_div.appendChild(
+                  child_ul_submenu_chapter_div
+                );
+                child_ul.appendChild(child_ul_submenu_button_div);
+                parent_li.appendChild(child_ul);
+              }
+            });
+
+            menuChapterDiv.appendChild(parent_li);
+            menuButtonDiv.appendChild(menuChapterDiv);
+
+            parentNavFragment.appendChild(menuButtonDiv);
+          } else {
+            menuChapterDiv.appendChild(form);
+            menuButtonDiv.appendChild(menuChapterDiv);
+
+            parentNavFragment.appendChild(menuButtonDiv);
+          }
+        });
+
+        ul.appendChild(parentNavFragment);
+
+        sideNav.appendChild(ul);
+        newSrc(activeLink, newSrcEnum.OTHER);
+      }
+    </script>
+    <!--  Changes for Search functionality Ends  -->
+  </head>
+  <body id="page-frame">
+    <div id="corporate_branding"></div>
+    <!--  Changes for Search functionality Starts  -->
+    <div class="tds-shell-masthead tds-shell-masthead--is_sticky"></div>
+    <div id="search-results" class="search-results search-result-box" style="top: 52px; height: 150px; display: none"></div>
+    <!--  Changes for Search functionality Ends  -->
+    <div id="page_content">
+      <div id="menu-trigger" class="container" onclick="myFunction(this)">
+        <div class="menu_button"></div>
+      </div>
+      <div id="referenced_content">
+        <div id="content_padding">
+          <object id="ohb_topic" data="splash.html"></object>
+        </div>
+      </div>
+      <!--  Changes for Search functionality Starts  -->
+      <div id="navigation_bar">
+        <nav id="multi-level-navigation"><ul><div class="menu-button"><div class="menu-chapter"><form class="search-container"><input type="text" placeholder="Search.." name="search" id="search-input"><button type="submit"><img src="../../images/search-alt.svg"></button></form></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Introduction</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>About This Guide</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">A Message from Fisker</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using This Guide, Locating and Referencing                                    Information</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Guide Applicability</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Illustrations</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Errors or Inaccuracies</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Symbols Glossary for Important                                    Information</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Trademarks</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Information About This Vehicle</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driving Advice</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Quality Control</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Modifications</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Body Repairs</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Electric Vehicle Precautions</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Vehicle Overview</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Exterior</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Exterior Overview</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Interior</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Interior Overview</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Overhead Console Overview</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Profiles</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Fisker Account</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Profiles</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Creating a Profile</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Deleting a Profile</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Opening &amp; Closing</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Keyless Entry System</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using the Key Fob</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Replacing the Key Fob Battery</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Caring for the Key Fob</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Replacement Key Fobs</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">About Connected App Features</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Doors</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Opening Doors from the Outside</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Opening Doors from the Inside</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Door Ajar Warning</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Locking and Unlocking from Inside the                                    Vehicle</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Child Safety Locks</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Automatic Locking and Unlocking</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Opening Interior Doors with No Power</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Windows</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Window Safety</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Opening and Closing Windows</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">OpenSky (Sliding Roof)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Doggie (Rear Quarter) Windows</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">California Mode (If Equipped)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Power Liftgate Window (If Equipped)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Liftgate</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Liftgate Opening and Closing</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Accessing the Lower Cargo Area with Flat                                    &amp; Fold Cargo Floor (If Equipped)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Retractable Cargo Cover (If Equipped)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Security</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Anti-theft System</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Intrusion Alert</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Tracking and Monitoring</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Find My Fisker (Remote Vehicle Locator)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Remote Flash Lights</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Monitoring</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Seating &amp; Safety Restraints</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Seats</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Correct Seating Position</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Correct Passenger Seating Position</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Adjusting the Front Seats</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driver Seat Memory (If Equipped)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Power Rear Seat Reclining (If Equipped)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Rear Seats Folding</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Seat Heating (If Equipped)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Head Restraints</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Head Restraints Overview</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Correct Head Restraint Position</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Adjusting a Rear Head Restraint</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Seat Belts</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Seat Belt Warnings</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Wearing Seat Belts</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Fastening the Seat Belt</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Seat Belt Reminders</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using Seat Belts When Pregnant</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Seat Belt Pre-tensioners</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Testing Seat Belts</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Child Safety Seats</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Guidelines for Seating Children</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Choosing a Child Safety Seat</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Seating Larger Children</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Installing Child Safety Seats</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Installing Seat Belt Retained Child                                    Seats</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Installing LATCH or ISOFIX Child Seats</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Attaching Upper Tether Straps</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Child Safety Seat Warnings</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Airbags</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Location of Airbags and Sensors</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Airbag Safety Information</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Airbag Safety Labels</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">How the Airbags Work</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Types of Airbags</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Obstruction of Airbags</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Front Passenger Seat Occupant                                    Classification System (OCS)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Effects of Airbag Inflation</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Airbag SRS Warning Indicator</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Airbag Service Information</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Driving &amp; Operating</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Steering Wheel</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Adjusting the Steering Wheel Position</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steering Wheel Heat (If Equipped)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steering Response and Sensitivity</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steering Wheel - Left Controls</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steering Wheel - Right Controls</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Horn</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Mirrors</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Exterior Mirrors</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Digital Rear View Mirror</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Driver Display</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driver Display Overview</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Warning Indicators (Telltales)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Power Usage</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Battery State of Charge (SoC) Indicators</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Driver Information</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Information and Alerts</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Trip Information</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Central Touchscreen</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Central Touchscreen Overview</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Control and Hollywood Modes (If                                    Equipped)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Display Brightness Settings</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Starting and Powering Off</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Starting</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Powering Off</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Gears</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Selecting a Gear</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Driving Modes</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Drive Modes</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Drive System Failure</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">High-Voltage Drive System Failure</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Drive Control</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steering Wheel Controls</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Drive Control Requirements</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using Drive Control</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Exterior Lights</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Exterior Lights Controls</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Daytime Running Lights</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">High Beam Headlights</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Automatic Headlight Adjustment</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Rear Fog Light</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Turn Signals</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Hazard Warning Lights</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Fisker Activate</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Interior Lights</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Interior Lighting Settings</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Overhead Lights</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Reading Lights</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cabin Lights</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Trunk Lights</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Wipers and Washers</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Wipers</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Washers</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Brakes</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Braking Systems</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Electronic Parking Brake (EPB)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Anti-Lock Braking System (ABS)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Regenerative Braking</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Brake Pad Wear</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Ride Control Systems</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Electronic Stability Control (ESC)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Getting Maximum Range</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driving Tips to Maximize Range</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Cameras</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Interior Camera</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Exterior Cameras</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Camera System Failure</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Heating, Ventilation &amp; Air Conditioning</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Climate Controls</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Defrost</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Limo Mode (if Equipped)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Interior Equipment</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Sun Visors</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cabin Storage Precautions</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Center Console</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Taco Trays</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Storage Boxes (If Equipped)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Rear Armrest</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Door Pockets</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Front Seatback Hooks</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cup Holders</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Accessory Connections</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">USB Connections</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Wireless Charging</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">12V Socket</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">AC Power Outlet</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">External Power Outlet</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Pedestrian Warning System</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Acoustic Vehicle Alerting System (AVAS)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Trailer Towing</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">General Trailering Information</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Trailer Mode</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driving Characteristics and Trailering                                    Tips</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Trailer Weight Ratings</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Towing Equipment</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Advanced Driver Assistance Systems (ADAS)</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>About ADAS</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">ADAS Features</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driver Responsibility</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">ADAS View</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">ADAS Component Locations</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">ADAS Limitations</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">ADAS Fault</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Driving Assistants</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Traffic Sign Recognition</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Traffic Light Recognition</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Speed Limit Assistance</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Safety Features</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Automatic Emergency Braking</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Blind Spot Detection</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Door Open Warning</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driver Monitoring System</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Lane Departure Warning and Lane Keep                                    Assist</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Parking Features</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Parking Assist</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">2D/3D Surround View System</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Infotainment</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>About Infotainment</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Infotainment Illustrations</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Before You Begin</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Physical Audio Controls</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steering Wheel Media Controls</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Media and Audio</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Media and Audio Overview</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Radio</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Audio Streaming Services Integration</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Playing Media from Devices</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Audio Settings</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Maps and Navigation</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Navigation Overview</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Navigating</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Adjusting the Map</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Setting Home and Favorite Destinations</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Offline Mode</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Map Updates</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Navigation Settings</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Phone and Smart Devices</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Bluetooth® Compatibility</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Pairing a Bluetooth® Device</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Device Syncing and Preferences</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Connecting and Disconnecting Bluetooth®                                    Devices</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Unpairing a Bluetooth® Device</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using the Phone App</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Making a Phone Call</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Receiving a Phone Call</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">In-Call Options</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using Messages</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Apps</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Apps</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Connectivity</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cellular Connection</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Add a Wi-Fi Network</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using Your Vehicle as a Hotspot</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Fisker Ocean with Alexa Built-in</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Alexa Built-in</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Alexa Settings</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using Alexa</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using Smart Home Devices with Your                                    Vehicle</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Information</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Viewing Vehicle Information</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Direct Access: Owner's Information</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Software Updates</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Over-the-Air Updates</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Viewing Release Notes</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Rebooting &amp; Resetting Systems</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Rebooting Infotainment</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Resetting the Vehicle</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>High-Voltage Battery Pack &amp; Charging</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Electric Vehicle Components</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">High-Voltage Components</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Battery Information</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">About the Vehicle Batteries</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Battery Pack Care</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">SolarSky</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Charging Instructions</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Safety Checklist</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Portable Charging Cable</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Charge Port Door</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Charging the Vehicle</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Disconnecting the Charging Cable</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Charging Status</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Setting Battery Saver</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cold Weather Charging Considerations</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">DC Charging Precaution</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using Public Charging Stations</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle as a Power Supply</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Coming Soon: PowerBank</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Maintenance</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Maintenance Requirements</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Your Responsibility</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Scheduled Maintenance</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Fluid Replacement</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Owner Maintenance</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Electrical and High Voltage Safety</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Multi-point Inspection</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Power Unit Compartment Access</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Opening and Closing the Hood</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Power Unit Compartment Overview</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Fluid Reservoirs</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Checking Brake Fluid</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Checking Washer Fluid</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Checking Coolant</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Wiper Blades and Washer Jets</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Checking the Wiper Blades</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Replacing Wiper Blades</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cleaning Washer Jets</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Cabin Air Filter</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Replacing the Cabin Air Filter</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Care</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cleaning the Exterior</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Polishing, Paint and Body Repairs</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using a Car Cover</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cleaning the Interior</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Floor Mats</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Electrical</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">12V Battery</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Light Source Replacement</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Fuse Box Locations</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Replacing a Fuse</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Low-Voltage Battery Fuse Box                                    Specifications</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Power Unit Compartment Fuse Box                                    Specifications</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Cabin Fuse Box</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Trunk Fuse Box Specifications</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Diagnostic Connector</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Parts and Accessories</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Parts, Accessories, and Modifications</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Body Repairs</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Placing RFID Transponders</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Lifting Points</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Lifting the Vehicle</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Storing the Vehicle</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Storage Guidelines</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Tires &amp; Wheels</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Tire Information</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Understanding Tire Markings</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">International Tire Approval Marks</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Uniform Tire Quality Grading</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Tire and Loading Information Label</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Tire Care and Maintenance</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Inspecting and Maintaining Tires</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Maintaining Tire Pressures</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Replacing Tires and Wheels</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Seasonal Tire Types</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Driving in Low Temperatures</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Snow chains</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Tire Pressure Monitoring System</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Tire Pressure Monitoring System (TPMS)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Tire Repair</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Safety Precautions</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Tire Repair Kit Overview</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Tire Repair Kit Components</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using the Tire Repair Kit</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Using the Compressor</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Loading</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Loading the Vehicle</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steps for Determining Correct Load Limit</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Roof Racks (If Equipped)</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Glossary of Terms</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Tires and Wheels Glossaries</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Technical Data</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Identification</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Identification Number</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Certification Label</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Dimensions and Weights</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Exterior Dimensions</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Weights</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Wheels and Tires</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Wheel and Tire Specifications</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Tire Pressures</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Sub-Systems</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Steering</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Brakes</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Front Suspension</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Rear Suspension</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Motors</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Battery: 12V</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Battery: High-Voltage</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Roadside Assistance &amp; Emergency Information</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>eCall</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">eCall (Europe)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">eCall (North America)</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Vehicle Location</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Roadside Assistance</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Fisker Roadside Assistance</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Contacting Roadside Assistance</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Disclaimers</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Instructions for Transporters</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Transporting the Vehicle</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Preparing the Vehicle for Transportation</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Pulling the Vehicle onto a Trailer or                                    Transporter</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Recovering the Vehicle From a Ditch</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Securing the Vehicle for Transportation</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Disabling the Power System</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Safety Precautions</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Emergency Responder Cut Loop</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Disabling the Vehicle’s Power for                                    Service</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Fire</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Firefighting</a></li></div></div></ul></li></div></div></ul></li></div></div><div class="menu-button"><div class="menu-chapter"><li class="item-has-submenu"><h3>Consumer Information</h3><ul class="sub-menu"><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Limited Warranty Information</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Warrantor</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Customer Assistance</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Contacting Fisker</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Reporting Safety Defects</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">United States</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Canada</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">United Kingdom, Europe, and Global                                    Markets</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Disclaimers</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">California Proposition 65</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">California Perchlorate Advisory</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Event Data Recorders</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">Data and Privacy</a></li></div></div><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">FCC and ISED Compliance</a></li></div></div></ul></li></div></div><div class="submenu-button"><div class="submenu-chapter"><li class="item-has-submenu"><h4>Vehicle Recycling</h4><ul class="sub-menu"><div class="topic-button"><div class="submenu-topic "><li id="link"><a class="topiclink">High-Voltage Battery Recycling Process</a></li></div></div></ul></li></div></div></ul></li></div></div></ul></nav>
+      </div>
+      <!--  Changes for Search functionality Ends  -->
+    </div>
+    <!--  Changes for Search functionality Starts  -->
+    <script>
+      expandSideNav("");
+    </script>
+    <!--  Changes for Search functionality Ends  -->
+  
+
+</body></html>
