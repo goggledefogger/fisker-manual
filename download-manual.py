@@ -7,7 +7,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
 
 # Debug flag and section limit
-DEBUG = True
+DEBUG = False
 DEBUG_SECTION_LIMIT = 5
 
 def get_content_hash(content):
