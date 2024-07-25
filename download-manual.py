@@ -20,7 +20,16 @@ async def get_content(page):
         () => {
             const obj = document.querySelector('#ohb_topic');
             if (obj && obj.contentDocument) {
-                return obj.contentDocument.body.innerText;
+                const body = obj.contentDocument.body;
+                // Debug: Log the HTML structure
+                console.log('HTML structure:', body.innerHTML);
+
+                // Exclude the header elements
+                const headerElements = body.querySelectorAll('h1, h2, h3, h4, h5, h6');
+                headerElements.forEach(el => el.remove());
+
+                // Get the remaining text content
+                return body.innerText;
             }
             return '';
         }
