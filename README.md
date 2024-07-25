@@ -6,8 +6,8 @@ This project provides a Python script to download the publicly available Fisker 
 
 Before you begin, ensure you have met the following requirements:
 
-- You have installed Python 3.8 or later.
-- You have a macOS machine (for Homebrew installation).
+- You have installed Python 3.8
+- You have a macOS machine (for Homebrew installation)
 
 ## Installing Fisker Ocean Manual Downloader
 
@@ -16,8 +16,8 @@ To install the Fisker Ocean Manual Downloader, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/fisker-ocean-manual-downloader.git
-   cd fisker-ocean-manual-downloader
+   git clone https://github.com/goggledefogger/fisker-manual.git
+   cd fisker-manual
    ```
 
 2. Install Homebrew if you haven't already:
@@ -54,7 +54,7 @@ To install the Fisker Ocean Manual Downloader, follow these steps:
 
 To use the Fisker Ocean Manual Downloader, follow these steps:
 
-1. Ensure you're in the project directory and your virtual environment is activated (if you're using one).
+1. Ensure you're in the project directory and your virtual environment is activated (if you're using one)
 
 2. Run the script:
 
@@ -62,7 +62,7 @@ To use the Fisker Ocean Manual Downloader, follow these steps:
    python download_manual.py
    ```
 
-3. The script will open a browser, navigate through the manual, and create a PDF file named `fisker_ocean_manual.pdf` in the same directory.
+3. The script will open a browser, navigate through the manual, and create a PDF file named `fisker_ocean_manual.pdf` in the same directory
 
 ## Contributing to Fisker Ocean Manual Downloader
 
@@ -74,7 +74,7 @@ To contribute to Fisker Ocean Manual Downloader, follow these steps:
 4. Push to the original branch: `git push origin <project_name>/<location>`
 5. Create the pull request.
 
-Alternatively, see the GitHub documentation on [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
+Alternatively, see the GitHub documentation on [creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
 
 ## Acknowledgements
 
