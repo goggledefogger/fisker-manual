@@ -1,19 +1,24 @@
 import asyncio
+import os
+import re
 from playwright.async_api import async_playwright
 import hashlib
 from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
+import base64
+from io import BytesIO
+from PIL import Image as PILImage
 
 # Debug flag and section limit
-DEBUG = False
+DEBUG = True
 DEBUG_SECTION_LIMIT = 5
 
 def get_content_hash(content):
     return hashlib.md5(content.encode()).hexdigest()
 
-async def get_content(page):
+async def get_page_content(page):
     await page.wait_for_selector("#ohb_topic")
 
     content = await page.evaluate("""
@@ -21,26 +26,42 @@ async def get_content(page):
             const obj = document.querySelector('#ohb_topic');
             if (obj && obj.contentDocument) {
                 const body = obj.contentDocument.body;
-                // Debug: Log the HTML structure
-                console.log('HTML structure:', body.innerHTML);
 
                 // Exclude the header elements
                 const headerElements = body.querySelectorAll('h1, h2, h3, h4, h5, h6');
                 headerElements.forEach(el => el.remove());
 
                 // Get the remaining text content
-                return body.innerText;
+                const textContent = body.innerText;
+
+                // Get the images
+                const images = body.querySelectorAll('object[type="image/png"]');
+                const imageSources = Array.from(images).map((img, idx) => {
+                    const data = img.getAttribute('data');
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    const image = new Image();
+                    image.src = data;
+                    canvas.width = image.width;
+                    canvas.height = image.height;
+                    ctx.drawImage(image, 0, 0);
+                    const dataUrl = canvas.toDataURL('image/png');
+                    return {data: dataUrl, filename: `image_${idx}.png`};
+                });
+
+                return { textContent, imageSources };
             }
-            return '';
+            return { textContent: '', imageSources: [] };
         }
     """)
 
     return content
 
-async def scrape_website(url):
+async def retrieve_website_content(url):
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
-        page = await browser.new_page()
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context()
+        page = await context.new_page()
 
         await page.goto(url)
         await page.wait_for_selector("#navigation_bar")
@@ -51,26 +72,46 @@ async def scrape_website(url):
         processed_content_hashes = set()
         processed_count = 0
 
+        image_dir = "images"
+        os.makedirs(image_dir, exist_ok=True)
+
         for index, item in enumerate(nav_items):
             try:
                 section_title = await item.inner_text()
+
+                # Sanitize the section title to create a valid filename
+                section_title = re.sub(r'[\\/*?:"<>|]', "_", section_title)
                 level = len(await item.query_selector_all("xpath=ancestor::ul"))
 
                 await item.click()
-                await asyncio.sleep(2)  # Wait for content to load
+                await asyncio.sleep(0.5)  # Wait for content to load
 
-                content = await get_content(page)
-                content_hash = get_content_hash(content)
+                content = await get_page_content(page)
+                content_hash = get_content_hash(content['textContent'])
 
                 print(f"Processing: {section_title}")
                 print(f"Content hash: {content_hash}")
-                print("Content preview: {}...".format(content[:100].replace('\n', ' ')))
+                print("Content preview: {}...".format(content['textContent'][:100].replace('\n', ' ')))
 
                 if content_hash in processed_content_hashes:
                     print(f"Skipping duplicate content: {section_title}")
                     continue
 
-                contents.append((level, section_title, content))
+                # Save the images
+                image_sources = []
+                for i, image_source in enumerate(content['imageSources']):
+                    image_filename = f"{section_title}_{image_source['filename']}"
+                    image_path = os.path.join(image_dir, image_filename)
+                    print(f"Saving embedded image: {image_filename}")
+
+                    # Decode base64 image data
+                    image_data = base64.b64decode(image_source['data'].split(',')[1])
+                    with open(image_path, 'wb') as handler:
+                        handler.write(image_data)
+                    print(f"Saved image: {image_path}")
+                    image_sources.append(image_path)
+
+                contents.append((level, section_title, content['textContent'], image_sources))
                 processed_content_hashes.add(content_hash)
                 processed_count += 1
                 print(f"Processed [{processed_count}/{len(nav_items)}]: {section_title} (Level {level})")
@@ -107,18 +148,51 @@ def create_pdf(contents):
     flowables.append(Paragraph("Fisker Ocean Manual", title_style))
     flowables.append(Spacer(1, 36))
 
-    for level, title, content in contents:
+    for level, title, content, image_sources in contents:
         heading_style = f'Heading{min(level + 1, 4)}'
         flowables.append(Paragraph(title, styles[heading_style]))
         flowables.append(Spacer(1, 12))
-        flowables.append(Paragraph(content, styles['BodyText']))
-        flowables.append(Spacer(1, 24))
+
+        # Split content around images
+        content_parts = re.split(r'\[IMAGE\]', content)
+        content_index = 0
+
+        for image_path in image_sources:
+            if os.path.exists(image_path):
+                try:
+                    img = PILImage.open(image_path)
+                    aspect_ratio = img.width / img.height
+                    width = 400
+                    height = width / aspect_ratio
+
+                    # Add text before the image if any
+                    if content_index < len(content_parts):
+                        part = content_parts[content_index].strip()
+                        if part:
+                            flowables.append(Paragraph(part, styles['BodyText']))
+                            flowables.append(Spacer(1, 12))
+                        content_index += 1
+
+                    # Add image
+                    img_flowable = Image(image_path, width=width, height=height)
+                    flowables.append(img_flowable)
+                    flowables.append(Spacer(1, 12))
+                except Exception as e:
+                    print(f"Error adding image {image_path}: {str(e)}")
+
+        # Add remaining text after images
+        while content_index < len(content_parts):
+            part = content_parts[content_index].strip()
+            if part:
+                flowables.append(Paragraph(part, styles['BodyText']))
+                flowables.append(Spacer(1, 12))
+            content_index += 1
 
     doc.build(flowables)
 
 async def main():
     url = "https://www.fiskerinc.com/owners_manual/Ocean/content/en-us/owner_guide.html"
-    contents = await scrape_website(url)
+    contents = await retrieve_website_content(url)
     create_pdf(contents)
     print(f"PDF created: fisker_ocean_manual_debug.pdf with {len(contents)} unique sections")
 
