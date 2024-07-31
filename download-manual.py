@@ -12,8 +12,8 @@ from io import BytesIO
 from PIL import Image as PILImage
 
 # Debug flag and section limit
-DEBUG = True
-DEBUG_SECTION_LIMIT = 5
+DEBUG = False
+DEBUG_SECTION_LIMIT = 30
 
 def get_content_hash(content):
     return hashlib.md5(content.encode()).hexdigest()
@@ -103,6 +103,9 @@ async def retrieve_website_content(url):
                     image_filename = f"{section_title}_{image_source['filename']}"
                     image_path = os.path.join(image_dir, image_filename)
                     print(f"Saving embedded image: {image_filename}")
+
+                    # wait for image to be done downloading locally
+                    await asyncio.sleep(0.3)
 
                     # Decode base64 image data
                     image_data = base64.b64decode(image_source['data'].split(',')[1])
