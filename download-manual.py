@@ -11,9 +11,12 @@ import base64
 from io import BytesIO
 from PIL import Image as PILImage
 
+WAIT_SECONDS_BETWEEN_CLICKS = 1
+WAIT_SECONDS_BETWEEN_IMAGES = 1
+
 # Debug flag and section limit
 DEBUG = False
-DEBUG_SECTION_LIMIT = 30
+DEBUG_SECTION_LIMIT = 100
 
 def get_content_hash(content):
     return hashlib.md5(content.encode()).hexdigest()
@@ -84,7 +87,7 @@ async def retrieve_website_content(url):
                 level = len(await item.query_selector_all("xpath=ancestor::ul"))
 
                 await item.click()
-                await asyncio.sleep(0.5)  # Wait for content to load
+                await asyncio.sleep(WAIT_SECONDS_BETWEEN_CLICKS)  # Wait for content to load
 
                 content = await get_page_content(page)
                 content_hash = get_content_hash(content['textContent'])
@@ -102,13 +105,24 @@ async def retrieve_website_content(url):
                 for i, image_source in enumerate(content['imageSources']):
                     image_filename = f"{section_title}_{image_source['filename']}"
                     image_path = os.path.join(image_dir, image_filename)
+
+                    # if the file already exists, check if the size of the file
+                    # is non-zero and if so skip it. otherwise continue and
+                    # try to save the image again
+                    if os.path.exists(image_path):
+                        if os.path.getsize(image_path) > 0:
+                            print(f"Skipping existing image: {image_path}")
+                            image_sources.append(image_path)
+                            continue
+
                     print(f"Saving embedded image: {image_filename}")
 
                     # wait for image to be done downloading locally
-                    await asyncio.sleep(0.3)
+                    await asyncio.sleep(WAIT_SECONDS_BETWEEN_IMAGES)
 
                     # Decode base64 image data
                     image_data = base64.b64decode(image_source['data'].split(',')[1])
+                    print(f"Image data length for {image_filename}: {len(image_data)}")
                     with open(image_path, 'wb') as handler:
                         handler.write(image_data)
                     print(f"Saved image: {image_path}")
@@ -164,9 +178,19 @@ def create_pdf(contents):
             if os.path.exists(image_path):
                 try:
                     img = PILImage.open(image_path)
-                    aspect_ratio = img.width / img.height
-                    width = 400
-                    height = width / aspect_ratio
+
+                    # Calculate the maximum width and height
+                    max_width = 400
+                    max_height = 500  # Adjust this value as needed
+
+                    # Calculate the scaling factor
+                    width_ratio = max_width / img.width
+                    height_ratio = max_height / img.height
+                    scale_factor = min(width_ratio, height_ratio)
+
+                    # Calculate new dimensions
+                    new_width = int(img.width * scale_factor)
+                    new_height = int(img.height * scale_factor)
 
                     # Add text before the image if any
                     if content_index < len(content_parts):
@@ -177,11 +201,18 @@ def create_pdf(contents):
                         content_index += 1
 
                     # Add image
-                    img_flowable = Image(image_path, width=width, height=height)
+                    img_flowable = Image(image_path, width=new_width, height=new_height)
                     flowables.append(img_flowable)
                     flowables.append(Spacer(1, 12))
                 except Exception as e:
                     print(f"Error adding image {image_path}: {str(e)}")
+                    # If there's an error, add a placeholder text
+                    flowables.append(Paragraph(f"[Image: {os.path.basename(image_path)}]", styles['BodyText']))
+                    flowables.append(Spacer(1, 12))
+            else:
+                print(f"Image file not found: {image_path}")
+                flowables.append(Paragraph(f"[Missing Image: {os.path.basename(image_path)}]", styles['BodyText']))
+                flowables.append(Spacer(1, 12))
 
         # Add remaining text after images
         while content_index < len(content_parts):
@@ -191,7 +222,11 @@ def create_pdf(contents):
                 flowables.append(Spacer(1, 12))
             content_index += 1
 
-    doc.build(flowables)
+    try:
+        doc.build(flowables)
+        print(f"PDF created: fisker_ocean_manual_debug.pdf with {len(contents)} unique sections")
+    except Exception as e:
+        print(f"Error building PDF: {str(e)}")
 
 async def main():
     url = "https://www.fiskerinc.com/owners_manual/Ocean/content/en-us/owner_guide.html"
