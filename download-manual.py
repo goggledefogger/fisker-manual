@@ -12,7 +12,7 @@ from io import BytesIO
 from PIL import Image as PILImage
 
 WAIT_SECONDS_BETWEEN_CLICKS = 1
-WAIT_SECONDS_BETWEEN_IMAGES = 1
+WAIT_SECONDS_BETWEEN_IMAGES = 2
 
 # Debug flag and section limit
 DEBUG = False
@@ -29,6 +29,18 @@ async def get_page_content(page):
             const obj = document.querySelector('#ohb_topic');
             if (obj && obj.contentDocument) {
                 const body = obj.contentDocument.body;
+
+                // Ensure images are fully loaded
+                const images = body.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.complete) {
+                        const promise = new Promise((resolve) => {
+                            img.onload = resolve;
+                            img.onerror = resolve;
+                        });
+                        await promise;
+                    }
+                });
 
                 // Exclude the header elements
                 const headerElements = body.querySelectorAll('h1, h2, h3, h4, h5, h6');
