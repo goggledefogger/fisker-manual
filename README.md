@@ -50,6 +50,11 @@ To install the Fisker Ocean Manual Downloader, follow these steps:
    playwright install
    ```
 
+7. Install the WeasyPrint library:
+   ```
+   pip install weasyprint
+   ```
+
 ## Using Fisker Ocean Manual Downloader
 
 To use the Fisker Ocean Manual Downloader, follow these steps:
