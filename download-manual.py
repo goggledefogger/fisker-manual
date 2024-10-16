@@ -10,6 +10,7 @@ from reportlab.lib.enums import TA_CENTER
 import base64
 from io import BytesIO
 from PIL import Image as PILImage
+import cairosvg
 
 WAIT_SECONDS_BETWEEN_CLICKS = 1
 WAIT_SECONDS_BETWEEN_IMAGES = 2
@@ -50,19 +51,19 @@ async def get_page_content(page):
                 const textContent = body.innerText;
 
                 // Get the images
-                const objectImages = body.querySelectorAll('object[type="image/png"]');
-                const imageSources = Array.from(objectImages).map((img, idx) => {
+                const objectImages = body.querySelectorAll('object[type="image/png"], object[type="image/svg+xml"]');
+                const imageSources = await Promise.all(Array.from(objectImages).map(async (img, idx) => {
                     const data = img.getAttribute('data');
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    const image = new Image();
-                    image.src = data;
-                    canvas.width = image.width;
-                    canvas.height = image.height;
-                    ctx.drawImage(image, 0, 0);
-                    const dataUrl = canvas.toDataURL('image/png');
-                    return {data: dataUrl, filename: `image_${idx}.png`};
-                });
+                    const response = await fetch(data);
+                    const blob = await response.blob();
+                    const reader = new FileReader();
+                    const promise = new Promise((resolve) => {
+                        reader.onloadend = () => resolve(reader.result);
+                    });
+                    reader.readAsDataURL(blob);
+                    const dataUrl = await promise;
+                    return {data: dataUrl, filename: `image_${idx}.${img.type === 'image/png' ? 'png' : 'svg'}`};
+                }));
 
                 return { textContent, imageSources };
             }
@@ -197,7 +198,14 @@ def create_pdf(contents):
         for image_path in image_sources:
             if os.path.exists(image_path):
                 try:
-                    img = PILImage.open(image_path)
+                    if image_path.endswith('.svg'):
+                        # Convert SVG to PNG
+                        png_image = BytesIO()
+                        cairosvg.svg2png(url=image_path, write_to=png_image)
+                        png_image.seek(0)
+                        img = PILImage.open(png_image)
+                    else:
+                        img = PILImage.open(image_path)
 
                     # Calculate the maximum width and height
                     max_width = 400
@@ -221,7 +229,7 @@ def create_pdf(contents):
                         content_index += 1
 
                     # Add image
-                    img_flowable = Image(image_path, width=new_width, height=new_height)
+                    img_flowable = Image(png_image if image_path.endswith('.svg') else image_path, width=new_width, height=new_height)
                     flowables.append(img_flowable)
                     flowables.append(Spacer(1, 12))
                 except Exception as e:
