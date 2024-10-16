@@ -31,8 +31,8 @@ async def get_page_content(page):
                 const body = obj.contentDocument.body;
 
                 // Ensure images are fully loaded
-                const images = body.querySelectorAll('img');
-                for (const img of images) {
+                const imgElements = body.querySelectorAll('img');
+                for (const img of imgElements) {
                     if (!img.complete) {
                         const promise = new Promise((resolve) => {
                             img.onload = resolve;
@@ -50,8 +50,8 @@ async def get_page_content(page):
                 const textContent = body.innerText;
 
                 // Get the images
-                const images = body.querySelectorAll('object[type="image/png"]');
-                const imageSources = Array.from(images).map((img, idx) => {
+                const objectImages = body.querySelectorAll('object[type="image/png"]');
+                const imageSources = Array.from(objectImages).map((img, idx) => {
                     const data = img.getAttribute('data');
                     const canvas = document.createElement('canvas');
                     const ctx = canvas.getContext('2d');
