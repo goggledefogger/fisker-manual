@@ -25,14 +25,14 @@ async def get_page_content(page):
     await page.wait_for_selector("#ohb_topic")
 
     content = await page.evaluate("""
-        () => {
+        async () => {
             const obj = document.querySelector('#ohb_topic');
             if (obj && obj.contentDocument) {
                 const body = obj.contentDocument.body;
 
                 // Ensure images are fully loaded
                 const images = body.querySelectorAll('img');
-                images.forEach(img => {
+                for (const img of images) {
                     if (!img.complete) {
                         const promise = new Promise((resolve) => {
                             img.onload = resolve;
@@ -40,7 +40,7 @@ async def get_page_content(page):
                         });
                         await promise;
                     }
-                });
+                }
 
                 // Exclude the header elements
                 const headerElements = body.querySelectorAll('h1, h2, h3, h4, h5, h6');
@@ -129,16 +129,24 @@ async def retrieve_website_content(url):
 
                     print(f"Saving embedded image: {image_filename}")
 
-                    # wait for image to be done downloading locally
-                    await asyncio.sleep(WAIT_SECONDS_BETWEEN_IMAGES)
+                    # Retry logic for 0-byte images
+                    retry_count = 3
+                    for attempt in range(retry_count):
+                        # wait for image to be done downloading locally
+                        await asyncio.sleep(WAIT_SECONDS_BETWEEN_IMAGES)
 
-                    # Decode base64 image data
-                    image_data = base64.b64decode(image_source['data'].split(',')[1])
-                    print(f"Image data length for {image_filename}: {len(image_data)}")
-                    with open(image_path, 'wb') as handler:
-                        handler.write(image_data)
-                    print(f"Saved image: {image_path}")
-                    image_sources.append(image_path)
+                        # Decode base64 image data
+                        image_data = base64.b64decode(image_source['data'].split(',')[1])
+                        print(f"Image data length for {image_filename}: {len(image_data)}")
+                        with open(image_path, 'wb') as handler:
+                            handler.write(image_data)
+                        print(f"Saved image: {image_path}")
+
+                        if os.path.getsize(image_path) > 0:
+                            image_sources.append(image_path)
+                            break
+                        else:
+                            print(f"Retrying download for image: {image_filename} (Attempt {attempt + 1})")
 
                 contents.append((level, section_title, content['textContent'], image_sources))
                 processed_content_hashes.add(content_hash)
