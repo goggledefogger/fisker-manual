@@ -138,12 +138,19 @@ async def retrieve_website_content(url):
                         # Decode base64 image data
                         image_data = base64.b64decode(image_source['data'].split(',')[1])
                         print(f"Image data length for {image_filename}: {len(image_data)}")
-                        with open(image_path, 'wb') as handler:
-                            handler.write(image_data)
-                        print(f"Saved image: {image_path}")
 
-                        if os.path.getsize(image_path) > 0:
-                            image_sources.append(image_path)
+                        # Convert PNG to JPEG and reduce quality
+                        image = PILImage.open(BytesIO(image_data))
+                        jpeg_image = BytesIO()
+                        image.convert("RGB").save(jpeg_image, format="JPEG", quality=75)
+                        jpeg_image_data = jpeg_image.getvalue()
+
+                        with open(image_path.replace(".png", ".jpeg"), 'wb') as handler:
+                            handler.write(jpeg_image_data)
+                        print(f"Saved image: {image_path.replace('.png', '.jpeg')}")
+
+                        if os.path.getsize(image_path.replace(".png", ".jpeg")) > 0:
+                            image_sources.append(image_path.replace(".png", ".jpeg"))
                             break
                         else:
                             print(f"Retrying download for image: {image_filename} (Attempt {attempt + 1})")
