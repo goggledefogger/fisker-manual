@@ -50,6 +50,16 @@ To install the Fisker Ocean Manual Downloader, follow these steps:
    playwright install
    ```
 
+7. Install the WeasyPrint library:
+   ```
+   pip install weasyprint
+   ```
+
+8. Install the Pango library to resolve the error:
+   ```
+   brew install pango
+   ```
+
 ## Using Fisker Ocean Manual Downloader
 
 To use the Fisker Ocean Manual Downloader, follow these steps:
